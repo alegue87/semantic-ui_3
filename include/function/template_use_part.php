@@ -14,7 +14,7 @@
  * @return mixed                   TRUE if the part was successfully added, FALSE otherwise
  */
 function template_use_part($slug, $replacement, $name = NULL) {
-	global $theme;
+	global $Theme;
 	$action = str_replace('\\','/','get_template_part_'.$slug);
 	
 	$templates = array();
@@ -26,7 +26,7 @@ function template_use_part($slug, $replacement, $name = NULL) {
 	
 	$located = template_part__locate($templates);
 	if (!empty($located)) {
-		return $theme->use_part($action, $located, TRUE);
+		return $Theme->use_part($action, $located, TRUE);
 	}
 	return FALSE;
 }

@@ -2,11 +2,13 @@
 /**
  * The theme header without the visible header.
  */
+global $Theme;
+
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<?php template_part($theme->content_sub_path.'/head'); ?>
+<?php template_part($Theme->content_sub_path.'/head'); ?>
 </head>
 <body <?php body_class('public-page'); ?>>
 	<div id="page-wrapper">

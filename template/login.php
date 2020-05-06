@@ -17,7 +17,7 @@ theme_header('none');
 <div class="ui middle aligned center aligned stackable grid" id="login-container">
 	<main class="five wide column">
 		<?php
-		template_part($theme->content_sub_path.'/login-form', $theme->post_type);
+		template_part($Theme->content_sub_path.'/login-form', $Theme->post_type);
 		?>
 	</main>
 </div>

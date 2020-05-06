@@ -19,7 +19,7 @@
  * @return mixed                 The returned value of the loaded file
  */
 function template_part__load($template_file, $require_once = TRUE, $identifier = '') {
-	global $theme, $posts, $post, $wp_did_header, $wp_query, $wp_rewrite, $wpdb, $wp_version, $wp, $id, $comment, $user_ID;
+	global $Theme, $posts, $post, $wp_did_header, $wp_query, $wp_rewrite, $wpdb, $wp_version, $wp, $id, $comment, $user_ID;
 	
 	$query_vars = array();
 	if (is_array($wp_query->query_vars)) {
@@ -40,10 +40,10 @@ function template_part__load($template_file, $require_once = TRUE, $identifier =
 	) + $query_vars;
 	
 	if (!empty($identifier)) {
-		return $theme->part($identifier, $template_file, TRUE, $require_once, $vars);
+		return $Theme->part($identifier, $template_file, TRUE, $require_once, $vars);
 	} elseif ($require_once) {
-		return $theme->req_once($template_file, TRUE, $vars);
+		return $Theme->req_once($template_file, TRUE, $vars);
 	} else {
-		return $theme->req($template_file, TRUE, $vars);
+		return $Theme->req($template_file, TRUE, $vars);
 	}
 }

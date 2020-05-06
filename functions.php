@@ -27,7 +27,9 @@ spl_autoload_register(function ($class) {
 });
 
 /*** Run Inits ***/
-new \semantic\theme();
+
+global $Theme;
+$Theme = new \semantic\theme();
 
 // Let the debugger know that we finished the functions.php file
 global $debug;

@@ -2,6 +2,7 @@
 /**
  * The default footer.
  */
+global $Theme;
 ?>
 				</div>
 			</div>
@@ -43,7 +44,7 @@
 					<div class="eight wide column">
 						<div class="ui center aligned basic segment">
 							<?php
-							if ($theme->get_option('powered_by')) {
+							if ($Theme->get_option('powered_by')) {
 								?>Proudly Powered By <a class="inverted" href="http://wordpress.org/">WordPress</a> &amp; <a class="inverted" href="http://semantic-ui.com/">Semantic UI</a>.<?php
 							}
 							?>
@@ -53,9 +54,9 @@
 						<div class="ui center aligned basic segment">
 							&copy; Copyright
 							<?php
-							$copyright_holder     = $theme->get_option('copyright_holder');
-							$copyright_holder_url = $theme->get_option('copyright_holder_url');
-							$copyright_year       = $theme->get_option('copyright_year');
+							$copyright_holder     = $Theme->get_option('copyright_holder');
+							$copyright_holder_url = $Theme->get_option('copyright_holder_url');
+							$copyright_year       = $Theme->get_option('copyright_year');
 							
 							if ($copyright_holder) {
 								if ($copyright_holder_url) {
@@ -79,7 +80,7 @@
 							} else {
 								echo $copyright_year.' - '.date('Y');
 							}
-							if ($theme->get_option('copyright_extra')) {
+							if ($Theme->get_option('copyright_extra')) {
 								echo ' - All Rights Reserved';
 							}
 							?>
@@ -91,7 +92,7 @@
 	</div>
 	
 	<!-- Modals -->
-	<?php template_part($theme->content_sub_path.'/modals'); ?>
+	<?php template_part($Theme->content_sub_path.'/modals'); ?>
 	<!-- /Modals -->
 	
 	

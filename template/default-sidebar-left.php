@@ -17,7 +17,7 @@ theme_header();
 		?>
 	</div>
 	<main class="eleven wide column">
-		<?php template_part($theme->content_sub_path.'/loop', $theme->post_type); ?>
+		<?php template_part($Theme->content_sub_path.'/loop', $Theme->post_type); ?>
 	</main>
 </div>
 <?php

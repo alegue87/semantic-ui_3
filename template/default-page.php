@@ -5,4 +5,4 @@
  * Shows pages as the default template without any sidebars.
  */
 
-template_part($theme->template_sub_path.'/default', 'sidebar-none');
+template_part($Theme->template_sub_path.'/default', 'sidebar-none');

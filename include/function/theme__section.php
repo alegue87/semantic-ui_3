@@ -21,7 +21,7 @@
  * @return mixed               The returned value of the file on success, NULL otherwise
  */
 function theme__section($section, $name = NULL) {
-	global $debug, $theme;
+	global $debug, $Theme;
 	$action = 'get_'.$section;
 	$debug->runtime_checkpoint('[Theme] Action: '.$action);
 	
@@ -30,11 +30,11 @@ function theme__section($section, $name = NULL) {
 	$locations = array();
 	$name      = (string) $name;
 	if (!empty($name)) {
-		$locations[] = sprintf('%1$s-%2$s', $theme->content_sub_path, $section, $name);
-		$locations[] = sprintf('%1$s/%2$s-%3$s', $theme->content_sub_path, $section, $name);
+		$locations[] = sprintf('%1$s-%2$s', $Theme->content_sub_path, $section, $name);
+		$locations[] = sprintf('%1$s/%2$s-%3$s', $Theme->content_sub_path, $section, $name);
 	}
 	$locations[] = $section;
-	$locations[] = $theme->content_sub_path.'/'.$section;
+	$locations[] = $Theme->content_sub_path.'/'.$section;
 	
 	foreach ($locations as $loc) {
 		if (template_part__locate($loc.'.php')) {

@@ -2,6 +2,8 @@
 /**
  * The footer without any visible content.
  */
+global $Theme;
+
 ?>
 				</div>
 			</div>
@@ -9,7 +11,7 @@
 	</div>
 	
 	<!-- Modals -->
-	<?php template_part($theme->content_sub_path.'/modals'); ?>
+	<?php template_part($Theme->content_sub_path.'/modals'); ?>
 	<!-- /Modals -->
 	
 	<?php wp_footer(); ?>

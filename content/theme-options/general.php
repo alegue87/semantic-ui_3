@@ -4,6 +4,8 @@
  * 
  * @see http://semantic-ui.com/collections/form.html
  */
+global $Theme;
+
 ?><div class="ui three column doubling grid">
 	<div class="column">
 		<div class="ui secondary stacked segment">
@@ -14,8 +16,8 @@
 					<?php
 					printf(
 						'<input type="text" placeholder="My Site Name" name="%1$s" value="%2$s">',
-						$theme->option_form_name('header_text'),
-						$theme->get_option('header_text')
+						$Theme->option_form_name('header_text'),
+						$Theme->get_option('header_text')
 					);
 					?>
 				</div>
@@ -24,8 +26,8 @@
 					<?php
 					printf(
 						'<input type="text" placeholder="My Slogan" name="%1$s" value="%2$s">',
-						$theme->option_form_name('header_subtext'),
-						$theme->get_option('header_subtext')
+						$Theme->option_form_name('header_subtext'),
+						$Theme->get_option('header_subtext')
 					);
 					?>
 				</div>
@@ -34,8 +36,8 @@
 					<?php
 					printf(
 						'<input type="text" placeholder="http://example.com/logo.png" name="%1$s" value="%2$s">',
-						$theme->option_form_name('logo_url'),
-						$theme->get_option('logo_url')
+						$Theme->option_form_name('logo_url'),
+						$Theme->get_option('logo_url')
 					);
 					?>
 				</div>
@@ -47,13 +49,13 @@
 						
 						foreach ($logo_sizes as $value) {
 							$checked = '';
-							if ($theme->get_option('logo_size') == (string) $value) {
+							if ($Theme->get_option('logo_size') == (string) $value) {
 								$checked = 'checked';
 							}
 							?>
 							<div class="column">
 								<div class="ui radio checkbox">
-									<input id="size-<?php echo $value; ?>" value="<?php echo $value; ?>" type="radio" name="<?php echo $theme->option_form_name('logo_size'); ?>" <?php echo $checked; ?>>
+									<input id="size-<?php echo $value; ?>" value="<?php echo $value; ?>" type="radio" name="<?php echo $Theme->option_form_name('logo_size'); ?>" <?php echo $checked; ?>>
 									<label for="size-<?php echo $value; ?>">
 										<?php
 										if ($value == 0) {
@@ -85,8 +87,8 @@
 					<?php
 					printf(
 						'<input type="text" placeholder="Person or Company Name" name="%1$s" value="%2$s">',
-						$theme->option_form_name('copyright_holder'),
-						$theme->get_option('copyright_holder')
+						$Theme->option_form_name('copyright_holder'),
+						$Theme->get_option('copyright_holder')
 					);
 					?>
 				</div>
@@ -95,8 +97,8 @@
 					<?php
 					printf(
 						'<input type="text" placeholder="http://example.com/" name="%1$s" value="%2$s">',
-						$theme->option_form_name('copyright_holder_url'),
-						$theme->get_option('copyright_holder_url')
+						$Theme->option_form_name('copyright_holder_url'),
+						$Theme->get_option('copyright_holder_url')
 					);
 					?>
 				</div>
@@ -105,8 +107,8 @@
 						<?php
 						printf(
 							'<input type="checkbox" value="1" name="%1$s" %2$s>',
-							$theme->option_form_name('copyright_extra'),
-							($theme->get_option('copyright_extra') ? 'checked' : '')
+							$Theme->option_form_name('copyright_extra'),
+							($Theme->get_option('copyright_extra') ? 'checked' : '')
 						);
 						?>
 						<label>Show "All Rights Reserved" <small>(see <a target="_blank" href="http://en.wikipedia.org/wiki/All_rights_reserved">this</a>)</small></label>
@@ -118,19 +120,19 @@
 				</h4>
 				<div class="ui center aligned basic segment">
 					<div class="ui selection dropdown">
-						<input type="hidden" name="<?php echo $theme->option_form_name('copyright_year'); ?>" value="<?php echo $theme->get_option('copyright_year'); ?>">
+						<input type="hidden" name="<?php echo $Theme->option_form_name('copyright_year'); ?>" value="<?php echo $Theme->get_option('copyright_year'); ?>">
 						<div class="default text">This Year</div>
 						<i class="dropdown icon"></i>
 						<div class="menu">
 							<?php
 							$selected = '';
-							if ((int) $theme->get_option('copyright_year') == 0) {
+							if ((int) $Theme->get_option('copyright_year') == 0) {
 								$selected=' active';
 							}
 							printf('<div class="item%2$s" data-value="%1$s">This Year</div>'.PHP_EOL, 0, $selected);
 							foreach (range((int) date("Y"), 1900) as $year) {
 								$selected = '';
-								if ((int) $theme->get_option('copyright_year') == $year) {
+								if ((int) $Theme->get_option('copyright_year') == $year) {
 									$selected=' active';
 								}
 								printf('<div class="item%2$s" data-value="%1$s">%1$s</div>'.PHP_EOL, $year, $selected);
@@ -151,8 +153,8 @@
 						<?php
 						printf(
 							'<input type="checkbox" value="1" name="%1$s" %2$s>',
-							$theme->option_form_name('first_run'),
-							($theme->get_option('first_run') ? 'checked' : '')
+							$Theme->option_form_name('first_run'),
+							($Theme->get_option('first_run') ? 'checked' : '')
 						);
 						?>
 						<label>Show First-Run</label>
@@ -163,8 +165,8 @@
 						<?php
 						printf(
 							'<input type="checkbox" value="1" name="%1$s" %2$s>',
-							$theme->option_form_name('powered_by'),
-							($theme->get_option('powered_by') ? 'checked' : '')
+							$Theme->option_form_name('powered_by'),
+							($Theme->get_option('powered_by') ? 'checked' : '')
 						);
 						?>
 						<label>Show "Powered By" Message</label>
@@ -185,8 +187,8 @@
 							<?php
 							printf(
 								'<input type="checkbox" value="1" name="%1$s" %2$s>',
-								$theme->option_form_name('theme_editor'),
-								($theme->get_option('theme_editor') ? 'checked' : '')
+								$Theme->option_form_name('theme_editor'),
+								($Theme->get_option('theme_editor') ? 'checked' : '')
 							);
 							?>
 							<label>Allow Theme Editor</label>

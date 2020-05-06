@@ -7,5 +7,5 @@
  * the woocommerce content.
  */
 
-template_use_part($theme->content_sub_path.'/loop', $theme->content_sub_path.'/woocommerce');
-template_part($theme->template_sub_path.'/default');
+template_use_part($Theme->content_sub_path.'/loop', $Theme->content_sub_path.'/woocommerce');
+template_part($Theme->template_sub_path.'/default');

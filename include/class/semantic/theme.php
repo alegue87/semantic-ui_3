@@ -214,8 +214,8 @@ class theme extends abstract_base {
 		new debug();
 		
 		// Setup globals and query vars
-		global $theme;
-		$theme = $this;
+		global $Theme;
+		$Theme = $this;
 		set_query_var('theme', $this);
 		
 		// Base path/uri
@@ -253,7 +253,7 @@ class theme extends abstract_base {
 		/*** Handle First Run ***/
 		if ($this->get_option('first_run')) {
 			// This is the first run, greet them
-			template_use_part($theme->template_sub_path.'/default', $theme->template_sub_path.'/first-run');
+			template_use_part($Theme->template_sub_path.'/default', $Theme->template_sub_path.'/first-run');
 		}
 		
 		parent::__construct();
@@ -297,8 +297,9 @@ class theme extends abstract_base {
 		$integrations = new integrations;
 		// Alphebetical based on the callback (doesn't effect the order they are called)
 		add_action('admin_bar_menu',        array($integrations, 'admin_bar_links'), 999);
-		add_action('nav_menu_css_class',    array($integrations, 'current_nav'), 10, 1);
-		add_action('admin_footer_text',     array($integrations, 'dashboard_footer'));
+    add_action('nav_menu_css_class',    array($integrations, 'current_nav'), 10, 1);
+    // Rimosso footer per donazioni in dash admin
+		//add_action('admin_footer_text',     array($integrations, 'dashboard_footer'));
 		add_action('init',                  array($integrations, 'editor_styles'), 11);
 		add_action('wp_enqueue_scripts',    array($integrations, 'enqueue'));
 		add_action('user_contactmethods',   array($integrations, 'google_author'));
@@ -488,7 +489,7 @@ class theme extends abstract_base {
 	}
 	
 	/**
-	 * Works like `include $theme_dir.'/'.$path`
+	 * Works like `include $Theme_dir.'/'.$path`
 	 * 
 	 * @param  String  $path     The path to the file you want to include
 	 * @param  boolean $is_abs   Is this an absolute path? Defaults to FALSE
@@ -520,7 +521,7 @@ class theme extends abstract_base {
 	}
 	
 	/**
-	 * Works like `include_once $theme_dir.'/'.$path`
+	 * Works like `include_once $Theme_dir.'/'.$path`
 	 * 
 	 * @param  String  $path     The path to the file you want to include
 	 * @param  boolean $is_abs   Is this an absolute path? Defaults to FALSE
@@ -552,7 +553,7 @@ class theme extends abstract_base {
 	}
 	
 	/**
-	 * Works like `require $theme_dir.'/'.$path`
+	 * Works like `require $Theme_dir.'/'.$path`
 	 * 
 	 * @param  String  $path     The path to the file you want to include
 	 * @param  boolean $is_abs   Is this an absolute path? Defaults to FALSE
@@ -584,7 +585,7 @@ class theme extends abstract_base {
 	}
 	
 	/**
-	 * Works like `require_once $theme_dir.'/'.$path`
+	 * Works like `require_once $Theme_dir.'/'.$path`
 	 * 
 	 * @param  String  $path     The path to the file you want to include
 	 * @param  boolean $is_abs   Is this an absolute path? Defaults to FALSE

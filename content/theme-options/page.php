@@ -8,6 +8,8 @@
  * 
  * That's it.
  */
+global $Theme;
+
 ?><div id="theme-options-tabs">
 	
 	<!-- Tab Menu -->
@@ -18,27 +20,27 @@
 	</div>
 	<!-- /Tab Menu -->
 	
-	<form class="ui bottom attached segment" method="POST" action="<?php echo $theme->options_uri(); ?>">
+	<form class="ui bottom attached segment" method="POST" action="<?php echo $Theme->options_uri(); ?>">
 		<?php
 		// This makes sure that the changes will be accepted
-		$theme->options_update_data();
+		$Theme->options_update_data();
 		?>
 		
 		<!-- Tab Sections -->
 		<section class="ui tab active" data-tab="first">
-			<?php template_part($theme->content_sub_path.'/theme-options/general'); ?>
+			<?php template_part($Theme->content_sub_path.'/theme-options/general'); ?>
 		</section>
 		<section class="ui tab" data-tab="second">
-			<?php template_part($theme->content_sub_path.'/theme-options/meta-tags'); ?>
+			<?php template_part($Theme->content_sub_path.'/theme-options/meta-tags'); ?>
 		</section>
 		<section class="ui tab" data-tab="third">
-			<?php template_part($theme->content_sub_path.'/theme-options/about'); ?>
+			<?php template_part($Theme->content_sub_path.'/theme-options/about'); ?>
 		</section>
 		<!-- /Tab Sections -->
 		
 		<br>
 		
 		<button type="submit" class="ui positive submit button">Save All Options</button>
-		<a class="ui button" href="<?php echo $theme->options_uri(); ?>">Cancel</a>
+		<a class="ui button" href="<?php echo $Theme->options_uri(); ?>">Cancel</a>
 	</form>
 </div>

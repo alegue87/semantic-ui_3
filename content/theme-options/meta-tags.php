@@ -1,3 +1,4 @@
+<?php global $Theme; ?>
 <div class="ui three column doubling grid">
 	<div class="column">
 		<div class="ui secondary stacked segment">
@@ -8,8 +9,8 @@
 						<?php
 						printf(
 							'<input type="checkbox" value="1" name="%1$s" %2$s>',
-							$theme->option_form_name('mobile_meta'),
-							($theme->get_option('mobile_meta') ? 'checked' : '')
+							$Theme->option_form_name('mobile_meta'),
+							($Theme->get_option('mobile_meta') ? 'checked' : '')
 						);
 						?>
 						<label>Enable Mobile Meta</label>
@@ -20,8 +21,8 @@
 					<?php
 					printf(
 						'<input type="text" placeholder="450" name="%1$s" value="%2$s">',
-						$theme->option_form_name('mobile_size'),
-						$theme->get_option('mobile_size')
+						$Theme->option_form_name('mobile_size'),
+						$Theme->get_option('mobile_size')
 					);
 					?>
 				</div>
@@ -37,8 +38,8 @@
 						<?php
 						printf(
 							'<input type="checkbox" value="1" name="%1$s" %2$s>',
-							$theme->option_form_name('meta_favicon_enabled'),
-							($theme->get_option('meta_favicon_enabled') ? 'checked' : '')
+							$Theme->option_form_name('meta_favicon_enabled'),
+							($Theme->get_option('meta_favicon_enabled') ? 'checked' : '')
 						);
 						?>
 						<label>Enable Favicon</label>
@@ -49,8 +50,8 @@
 					<?php
 					printf(
 						'<input type="text" placeholder="/favicon.png" name="%1$s" value="%2$s">',
-						$theme->option_form_name('meta_favicon'),
-						$theme->get_option('meta_favicon')
+						$Theme->option_form_name('meta_favicon'),
+						$Theme->get_option('meta_favicon')
 					);
 					?>
 				</div>
@@ -66,8 +67,8 @@
 						<?php
 						printf(
 							'<input type="checkbox" value="1" name="%1$s" %2$s>',
-							$theme->option_form_name('meta_x_ua_compatible_enabled'),
-							($theme->get_option('meta_x_ua_compatible_enabled') ? 'checked' : '')
+							$Theme->option_form_name('meta_x_ua_compatible_enabled'),
+							($Theme->get_option('meta_x_ua_compatible_enabled') ? 'checked' : '')
 						);
 						?>
 						<label>Enable X-UA-Compatible</label>
@@ -78,8 +79,8 @@
 					<?php
 					printf(
 						'<input type="text" placeholder="IE=edge,chrome=1" name="%1$s" value="%2$s">',
-						$theme->option_form_name('meta_x_ua_compatible'),
-						$theme->get_option('meta_x_ua_compatible')
+						$Theme->option_form_name('meta_x_ua_compatible'),
+						$Theme->get_option('meta_x_ua_compatible')
 					);
 					?>
 				</div>
@@ -95,8 +96,8 @@
 						<?php
 						printf(
 							'<input type="checkbox" value="1" name="%1$s" %2$s>',
-							$theme->option_form_name('meta_keywords_enabled'),
-							($theme->get_option('meta_keywords_enabled') ? 'checked' : '')
+							$Theme->option_form_name('meta_keywords_enabled'),
+							($Theme->get_option('meta_keywords_enabled') ? 'checked' : '')
 						);
 						?>
 						<label>Enable Keywords</label>
@@ -107,8 +108,8 @@
 					<?php
 					printf(
 						'<input type="text" placeholder="html5, ui, library, framework, javascript" name="%1$s" value="%2$s">',
-						$theme->option_form_name('meta_keywords'),
-						$theme->get_option('meta_keywords')
+						$Theme->option_form_name('meta_keywords'),
+						$Theme->get_option('meta_keywords')
 					);
 					?>
 				</div>

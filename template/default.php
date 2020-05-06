@@ -5,12 +5,13 @@
  * Shows pages as the default template without any sidebars.
  */
 
+global $Theme;
 
 theme_header();
 ?>
 <div class="ui stackable grid">
 	<main class="eleven wide column">
-		<?php template_part($theme->content_sub_path.'/loop', $theme->post_type); ?>
+		<?php template_part($Theme->content_sub_path.'/loop', $Theme->post_type); ?>
 	</main>
 	<div class="five wide column">
 		<?php

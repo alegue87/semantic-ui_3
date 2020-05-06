@@ -2,6 +2,7 @@
 /**
  * The default theme header.
  */
+global $Theme;
 
 $num_to_eng = array(
 	0  => 'zero',
@@ -23,14 +24,14 @@ $num_to_eng = array(
 	16 => 'sixteen',
 );
 
-$logo_width = $num_to_eng[(int) $theme->get_option('logo_size')];
-$menu_width = $num_to_eng[(16 - (int) $theme->get_option('logo_size'))];
+$logo_width = $num_to_eng[(int) $Theme->get_option('logo_size')];
+$menu_width = $num_to_eng[(16 - (int) $Theme->get_option('logo_size'))];
 
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<?php template_part($theme->content_sub_path.'/head'); ?>
+<?php template_part($Theme->content_sub_path.'/head'); ?>
 </head>
 <body <?php body_class('public-page'); ?>>
 	<div id="page-wrapper">
@@ -41,10 +42,10 @@ $menu_width = $num_to_eng[(16 - (int) $theme->get_option('logo_size'))];
 					?>
 				<div class="<?php echo $logo_width; ?> wide center aligned column">
 					<?php
-					if ($theme->get_option('logo_url')) {
+					if ($Theme->get_option('logo_url')) {
 						?>
 						<a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-							<img src="<?php echo $theme->get_option('logo_url'); ?>" alt="company logo">
+							<img src="<?php echo $Theme->get_option('logo_url'); ?>" alt="company logo">
 						</a>
 						<?php
 					}
@@ -57,12 +58,12 @@ $menu_width = $num_to_eng[(16 - (int) $theme->get_option('logo_size'))];
 					?>
 				<div class="<?php echo $menu_width; ?> wide column">
 					<?php
-					if ($theme->get_option('header_text') || $theme->get_option('header_subtext')) {
+					if ($Theme->get_option('header_text') || $Theme->get_option('header_subtext')) {
 						?>
 						<h1 class="ui huge inverted center aligned header">
-							<?php echo $theme->get_option('header_text'); ?>
+							<?php echo $Theme->get_option('header_text'); ?>
 							<div class="sub header">
-								<?php echo $theme->get_option('header_subtext'); ?>
+								<?php echo $Theme->get_option('header_subtext'); ?>
 							</div>
 						</h1>
 						<?php
